@@ -1,0 +1,14 @@
+<by.grsu.by.table.ManagerTable>
+  <rows>
+    <by.grsu.by.datamodel.Manager>
+      <id>74146753248550</id>
+      <firstName>Alex</firstName>
+      <lastName>Black</lastName>
+    </by.grsu.by.datamodel.Manager>
+    <by.grsu.by.datamodel.Manager>
+      <id>74146786705608</id>
+      <firstName>Alex</firstName>
+      <lastName>Black</lastName>
+    </by.grsu.by.datamodel.Manager>
+  </rows>
+</by.grsu.by.table.ManagerTable>

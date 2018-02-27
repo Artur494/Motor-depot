@@ -1,6 +1,8 @@
 package by.grsu.by.datamodel;
 
-public class Manager extends AbstractModel {
+import java.io.Serializable;
+
+public class Manager extends AbstractModel implements Serializable {
 	
 	private String firstName;
 	private String lastName;

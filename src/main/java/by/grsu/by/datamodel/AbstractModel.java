@@ -1,5 +1,7 @@
 package by.grsu.by.datamodel;
 
+import java.io.Serializable;
+
 public abstract class AbstractModel {
 	
 	private Long id;

@@ -1,6 +1,9 @@
 package by.grsu.by.datamodel;
 
-public class Car extends AbstractModel {
+import java.io.Serializable;
+
+public class Car extends AbstractModel implements Serializable {
+	
 	private String condition;
 	private Boolean characteristics;
 	

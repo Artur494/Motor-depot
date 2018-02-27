@@ -1,8 +1,9 @@
 package by.grsu.by.datamodel;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Flight extends AbstractModel {
+public class Flight extends AbstractModel implements Serializable {
 	
 	private Date date;
 	private String status;

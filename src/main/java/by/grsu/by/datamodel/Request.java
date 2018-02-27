@@ -1,6 +1,8 @@
 package by.grsu.by.datamodel;
 
-public class Request {
+import java.io.Serializable;
+
+public class Request extends AbstractModel implements Serializable {
 	
 	private String conditionCar;
 	private Boolean performanceCar;

@@ -1,10 +1,12 @@
 package by.grsu.by.datamodel;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Driver extends AbstractModel {
+public class Driver extends AbstractModel implements Serializable {
 	private Car car;
 	private List<Flight> flights;
+	
 	public Car getCar() {
 		return car;
 	}
