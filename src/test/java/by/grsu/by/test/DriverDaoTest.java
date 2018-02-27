@@ -64,7 +64,9 @@ public class DriverDaoTest {
 		
 		List<Flight> flights = new ArrayList<Flight>();
 		Flight f = new Flight();
-		f.setDate(new Date (2018, 2, 14));
+		GregorianCalendar calendar = new GregorianCalendar(1999, 03, 15);
+		Date date = calendar.getTime();
+		f.setDate(date);
 		f.setStatus("good");
 		flights.add(f);
 		

@@ -1,6 +1,7 @@
 package by.grsu.by.test;
 
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -53,7 +54,9 @@ public class FlightDaoTest {
 	private Flight saveNewFlight() {
 		final Flight newFlight = new Flight();
 		
-		newFlight.setDate(new Date(2018, 2, 14));
+		GregorianCalendar calendar = new GregorianCalendar(1999, 03, 15);
+		Date date = calendar.getTime();
+		newFlight.setDate(date);
 		newFlight.setStatus("good");
 		flightDao.saveNew(newFlight);
 		return newFlight;

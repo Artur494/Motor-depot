@@ -20,5 +20,15 @@
       <date>3918-03-13 21:00:00.0 UTC</date>
       <status>good</status>
     </by.grsu.by.datamodel.Flight>
+    <by.grsu.by.datamodel.Flight>
+      <id>90641491345479</id>
+      <date>1999-04-14 21:00:00.0 UTC</date>
+      <status>good</status>
+    </by.grsu.by.datamodel.Flight>
+    <by.grsu.by.datamodel.Flight>
+      <id>90641534447911</id>
+      <date>1999-04-14 21:00:00.0 UTC</date>
+      <status>good</status>
+    </by.grsu.by.datamodel.Flight>
   </rows>
 </by.grsu.by.table.FlightTable>

@@ -20,5 +20,15 @@
       <condition>normal</condition>
       <characteristics>true</characteristics>
     </by.grsu.by.datamodel.Car>
+    <by.grsu.by.datamodel.Car>
+      <id>90712467302247</id>
+      <condition>normal</condition>
+      <characteristics>true</characteristics>
+    </by.grsu.by.datamodel.Car>
+    <by.grsu.by.datamodel.Car>
+      <id>90712485161420</id>
+      <condition>normal</condition>
+      <characteristics>true</characteristics>
+    </by.grsu.by.datamodel.Car>
   </rows>
 </by.grsu.by.table.CarTable>
