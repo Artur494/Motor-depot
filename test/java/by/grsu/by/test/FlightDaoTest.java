@@ -56,6 +56,7 @@ public class FlightDaoTest {
 		
 		GregorianCalendar calendar = new GregorianCalendar(1999, 03, 15);
 		Date date = calendar.getTime();
+		
 		newFlight.setDate(date);
 		newFlight.setStatus("good");
 		flightDao.saveNew(newFlight);
