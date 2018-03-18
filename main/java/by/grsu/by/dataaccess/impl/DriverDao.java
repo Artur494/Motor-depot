@@ -37,7 +37,7 @@ public class DriverDao extends AbstractDao<DriverTable, Driver> {
 						// found!!!
 						// copy data
 						row.setCar(entity.getCar());
-						row.setFlights(entity.getFlights());
+						row.setName(entity.getName());
 						break;
 					}
 				}

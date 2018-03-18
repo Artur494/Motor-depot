@@ -1,0 +1,29 @@
+<wicket:panel>
+	<div class="content">
+		<table>
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Model</th>
+					<th>Condition</th>
+					<th>Cruising Range</th>
+					<th>Body type</th>
+					<th>Number Car</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr wicket:id="rows">
+					<td class="column-1"><span wicket:id="id" /></td>
+					<td class="column-2"><span wicket:id="carModel" /></td>
+					<td class="column-3"><span wicket:id="condition" /></td>
+					<td class="column-4"><span wicket:id="cruisingRange" /></td>
+					<td class="column-5"><span wicket:id="bodyType" /></td>
+					<td class="column-6"><span wicket:id="numberCar" /></td>
+					<td class="column-7"><a wicket:id="delete-link"> delete </a>/
+						<a wicket:id="edit-link">edit</a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</wicket:panel>

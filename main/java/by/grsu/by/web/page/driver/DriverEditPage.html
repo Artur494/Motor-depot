@@ -1,0 +1,38 @@
+
+<html xmlns:wicket="http://wicket.apache.org">
+<head>
+<meta charset="utf-8" />
+<title>Driver edit page</title>
+<link rel="stylesheet" href="style.css" type="text/css" media="screen"
+	title="Stylesheet" />
+</head>
+<body>
+		<footer class="editFooter">
+			<h2>Driver edit</h2>
+		</footer>
+		<aside>
+			<div class="editContent">
+				<form wicket:id="form">
+					<table class="table-edit">
+						<tr>
+							<td><b>Name:</b></td>
+							<td><input type="text" wicket:id="name" /></td>
+						</tr>
+						<tr>
+							<td><b>Car:</b></td>
+							<td><select wicket:id="car"></select></td>
+						</tr>
+					</table>
+					<div>
+						<p>
+							<button type="submit" wicket:id="save">Save</button>
+							<button type="button" wicket:id="cancel">Cancel</button>
+						</p>
+					</div>
+				</form>
+			</div>
+		</aside>
+		<div wicket:id="feedback"></div>
+
+</body>
+</html>

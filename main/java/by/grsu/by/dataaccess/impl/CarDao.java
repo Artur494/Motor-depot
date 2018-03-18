@@ -3,9 +3,9 @@ package by.grsu.by.dataaccess.impl;
 import java.io.Serializable;
 import java.util.List;
 
+import by.grsu.by.dataaccess.AbstractDao;
 import by.grsu.by.datamodel.Car;
 import by.grsu.by.table.CarTable;
-import by.grsu.by.dataaccess.AbstractDao;
 
 
 public class CarDao extends AbstractDao<CarTable, Car> {
@@ -37,7 +37,10 @@ public class CarDao extends AbstractDao<CarTable, Car> {
 						// found!!!
 						// copy data
 						row.setCondition(entity.getCondition());
-						row.setCharacteristics(entity.getCharacteristics());
+						row.setCarModel(entity.getCarModel());
+						row.setBodyType(entity.getBodyType());
+						row.setCruisingRange(entity.getCruisingRange());
+						row.setNumberCar(entity.getNumberCar());
 						break;
 					}
 				}

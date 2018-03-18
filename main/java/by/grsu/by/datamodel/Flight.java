@@ -2,12 +2,12 @@ package by.grsu.by.datamodel;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.GregorianCalendar;
 
 public class Flight extends AbstractModel implements Serializable {
 	
 	private Date date;
-	private String status;
+	private String status;	
+	private Driver driver;
 	
 	public Date getDate() {
 		return date;
@@ -20,6 +20,12 @@ public class Flight extends AbstractModel implements Serializable {
 	}
 	public void setStatus(String status) {
 		this.status = status;
+	}
+	public Driver getDriver() {
+		return driver;
+	}
+	public void setDriver(Driver driver) {
+		this.driver = driver;
 	}
 	
 }

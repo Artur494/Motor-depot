@@ -1,0 +1,23 @@
+<wicket:panel>
+	<div class="content">
+		<table>
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Status</th>
+					<th>Date</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr wicket:id="rows">
+					<td class="column-1"><span wicket:id="id" /></td>
+					<td class="column-2"><span wicket:id="status" /></td>
+					<td class="column-3"><span wicket:id="date" /></td>
+					<td class="column-4"><a wicket:id="delete-link"> delete </a>/
+						<a wicket:id="edit-link">edit</a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</wicket:panel>

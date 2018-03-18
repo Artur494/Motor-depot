@@ -71,7 +71,7 @@ public class StartJetty {
 
 		WebAppContext bb = new WebAppContext();
 		bb.setServer(server);
-		bb.setContextPath("/");
+		bb.setContextPath("/p2");
 		bb.setWar("src/main/webapp");
 
 		// uncomment next line if you want to test with JSESSIONID encoded in

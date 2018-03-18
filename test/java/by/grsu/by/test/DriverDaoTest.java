@@ -62,16 +62,7 @@ public class DriverDaoTest {
 		car.setCondition("normal");
 		car.setCharacteristics(true);
 		
-		List<Flight> flights = new ArrayList<Flight>();
-		Flight f = new Flight();
-		GregorianCalendar calendar = new GregorianCalendar(1999, 03, 15);
-		Date date = calendar.getTime();
-		f.setDate(date);
-		f.setStatus("good");
-		flights.add(f);
-		
 		newDriver.setCar(car);
-		newDriver.setFlights(flights);
 		driverDao.saveNew(newDriver);
 		return newDriver;
 	}

@@ -1,0 +1,56 @@
+<html xmlns:wicket="http://wicket.apache.org">
+<head>
+<meta charset="utf-8" />
+<title>request edit page</title>
+<link rel="stylesheet" href="style.css" type="text/css" media="screen"
+	title="Stylesheet" />
+</head>
+<body>
+	<footer class="editFooter">
+		<h2>Request edit</h2>
+	</footer>
+	<aside>
+		<div class="editContent">
+			<form wicket:id="form">
+				<table class="table-edit">
+					<tr>
+						<td><h4>Status:</h4></td>
+						<td><select wicket:id="status"></select></td>
+					</tr>
+					<tr>
+						<td><br></td>
+					</tr>
+					<tr>
+						<td><h2>Characteristics:</h2></td>
+					</tr>
+					<tr>
+						<td><h4>Cruising Range:</h4></td>
+						<td><select wicket:id="cruisingRange"></select></td>
+					</tr>
+					<tr>
+						<td><h4>Condition:</h4></td>
+						<td><select wicket:id="condition"></select></td>
+					</tr>
+					<tr>
+						<td><h4>Body type:</h4></td>
+						<td><select wicket:id="bodyType"></select></td>
+					</tr>
+					<tr>
+						<td><h4>Date:</h4></td>
+						<td><input type="text" wicket:id="dateTextField1" /></td>
+					</tr>
+				</table>
+				<div>
+					<p>
+						<button type="submit" wicket:id="save">Save</button>
+						<button type="button" wicket:id="cancel">Cancel</button>
+					</p>
+				</div>
+			</form>
+		</div>
+	</aside>
+
+	<div wicket:id="feedback"></div>
+
+</body>
+</html>

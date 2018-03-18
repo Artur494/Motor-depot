@@ -36,8 +36,11 @@ public class RequestDao extends AbstractDao<RequestTable, Request> {
 					if (row.getId().equals(entity.getId())) {
 						// found!!!
 						// copy data
-						row.setConditionCar(entity.getConditionCar());
-						row.setPerformanceCar(entity.getPerformanceCar());
+						row.setStatus(entity.getStatus());
+						row.setCondition(entity.getCondition());
+						row.setDate(entity.getDate());
+						row.setCruisingRange(entity.getCruisingRange());
+						row.setBodyType(entity.getBodyType());
 						break;
 					}
 				}
