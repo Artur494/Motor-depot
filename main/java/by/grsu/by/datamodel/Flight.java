@@ -6,8 +6,16 @@ import java.util.Date;
 public class Flight extends AbstractModel implements Serializable {
 	
 	private Date date;
+	private String name;
 	private String status;	
 	private Driver driver;
+	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
 	
 	public Date getDate() {
 		return date;

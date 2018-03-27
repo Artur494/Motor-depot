@@ -21,5 +21,4 @@ public class RequestTable extends AbstractTable<Request> {
 	public void setRows(List<Request> rows) {
 		this.rows = rows;
 	}
-
 }

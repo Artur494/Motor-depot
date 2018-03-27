@@ -1,5 +1,8 @@
 package by.grsu.by.test;
 
+import java.util.Date;
+import java.util.GregorianCalendar;
+
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -50,8 +53,13 @@ public class RequestDaoTest {
 
 	private Request saveNewRequest() {
 		final Request newRequest = new Request();
-		newRequest.setConditionCar("normal");
-		newRequest.setPerformanceCar(true);;
+		GregorianCalendar calendar = new GregorianCalendar(1999, 03, 15);
+		Date date = calendar.getTime();
+		newRequest.setDate(date);
+		newRequest.setCondition("Ready for flight");
+		newRequest.setCruisingRange("0 - 100");
+		newRequest.setBodyType("Cabriolet");
+		newRequest.setStatus("In processing");
 		requestDao.saveNew(newRequest);
 		return newRequest;
 	}

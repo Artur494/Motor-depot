@@ -50,8 +50,11 @@ public class CarDaoTest {
 
 	private Car saveNewCar() {
 		final Car newCar = new Car();
-		newCar.setCondition("normal");
-		newCar.setCharacteristics(true);
+		newCar.setCarModel("BMW");
+		newCar.setCondition("Ready for flight");
+		newCar.setCruisingRange("0 - 100");
+		newCar.setBodyType("Cabriolet");
+		newCar.setNumberCar(1);
 		carDao.saveNew(newCar);
 		return newCar;
 	}

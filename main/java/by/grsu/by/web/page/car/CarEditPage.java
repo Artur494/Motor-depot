@@ -3,7 +3,6 @@ package by.grsu.by.web.page.car;
 import java.util.Arrays;
 import java.util.List;
 
-import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.form.DropDownChoice;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.SubmitLink;
@@ -11,30 +10,32 @@ import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.markup.html.link.Link;
 import org.apache.wicket.markup.html.panel.FeedbackPanel;
 import org.apache.wicket.model.CompoundPropertyModel;
+import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.Model;
 
-import by.grsu.by.dataaccess.impl.CarDao;
 import by.grsu.by.datamodel.Car;
 import by.grsu.by.datamodel.CarModels;
 import by.grsu.by.datamodel.Characteristics;
+import by.grsu.by.service.Service;
+import by.grsu.by.service.impl.CarServiceImpl;
+import by.grsu.by.web.page.AbstractPage;
 
-public class CarEditPage extends WebPage {
+public class CarEditPage extends AbstractPage {
 
-	private CarDao carDao;
+	private Service carService;
 	private Boolean selectCreateOrUpdate = true;
 	private Car car;
 
+	public CarEditPage() {
+		super();
+		this.car = new Car();
+		carService = new CarServiceImpl("testXmlFolder");
+	}
+	
 	public CarEditPage(Car car) {
 		super();
 		this.car = car;
-		carDao = new CarDao("testXmlFolder");
-	}
-	
-	public CarEditPage(Car car, Boolean selectCreateOrUpdate) {
-		super();
-		this.car = car;
-		this.selectCreateOrUpdate = selectCreateOrUpdate;
-		carDao = new CarDao("testXmlFolder");
+		carService = new CarServiceImpl("testXmlFolder");
 	}
 
 	@Override
@@ -75,11 +76,7 @@ public class CarEditPage extends WebPage {
 			@Override
 			public void onSubmit() {
 				super.onSubmit();
-				if (selectCreateOrUpdate) {
-					
-				carDao.saveNew(car);
-				}
-				else {carDao.update(car);}
+				carService.saveOrUpdate(car);
 				setResponsePage(new CarsPage());
 			}
 		});
@@ -92,6 +89,12 @@ public class CarEditPage extends WebPage {
 			}
 		});
 		add(new FeedbackPanel("feedback"));
+	}
+	private class CarForm<T> extends Form<T> {
+
+		public CarForm(String id, IModel<T> model) {
+			super(id, model);
+		}
 	}
 
 }

@@ -3,17 +3,30 @@
 		<table>
 			<thead>
 				<tr>
-					<th>Condition /</th>
-					<th>Characteristics /</th>
-					<th>Actions</th>
+					<wicket:enclosure child="label-id">
+						<th><span wicket:id="label-id" /></th>
+					</wicket:enclosure>
+					<th>Status</th>
+					<th>Cruising Range</th>
+					<th>Body type</th>
+					<th>Date</th>
+					<wicket:enclosure child="label-actions">
+						<th><span wicket:id="label-actions" /></th>
+					</wicket:enclosure>
 				</tr>
 			</thead>
 			<tbody>
-				<tr wicket:id="rows">
-					<td class="column-1"><span wicket:id="condition" /></td>
-					<td class="column-1"><span wicket:id="characteristics" /></td>
-					<td class="column-3"><a wicket:id="delete-link"> delete </a>/
-						<a wicket:id="edit-link">edit</a></td>
+				<tr class="trHover" wicket:id="rows">
+					<wicket:enclosure child="id">
+						<td class="column-1"><span wicket:id="id" /></td>
+					</wicket:enclosure>
+					<td class="column-2"><span wicket:id="status" /></td>
+					<td class="column-4"><span wicket:id="cruisingRange" /></td>
+					<td class="column-5"><span wicket:id="bodyType" /></td>
+					<td class="column-6"><span wicket:id="date" /></td>
+					<wicket:enclosure child="consider">
+						<td class="column-7"><a wicket:id="consider">Consider</a></td>
+					</wicket:enclosure>
 				</tr>
 			</tbody>
 		</table>

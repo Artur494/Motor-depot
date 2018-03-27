@@ -43,10 +43,10 @@ public class StartJetty {
 
 		Resource keystore = Resource.newClassPathResource("/keystore");
 		if (keystore != null && keystore.exists()) {
-			// if a keystore for a SSL certificate is available, start a SSL
+			// if a key store for a SSL certificate is available, start a SSL
 			// connector on port 8443.
-			// By default, the quickstart comes with a Apache Wicket Quickstart
-			// Certificate that expires about half way september 2021. Do not
+			// By default, the quick start comes with a Apache Wicket Quickstart
+			// Certificate that expires about half way September 2021. Do not
 			// use this certificate anywhere important as the passwords are
 			// available in the source.
 
@@ -71,11 +71,11 @@ public class StartJetty {
 
 		WebAppContext bb = new WebAppContext();
 		bb.setServer(server);
-		bb.setContextPath("/p2");
+		bb.setContextPath("/u");
 		bb.setWar("src/main/webapp");
 
 		// uncomment next line if you want to test with JSESSIONID encoded in
-		// the urls
+		// the url's
 		// ((AbstractSessionManager)
 		// bb.getSessionHandler().getSessionManager()).setUsingCookies(false);
 

@@ -5,6 +5,7 @@ import java.util.Date;
 
 public class Request extends AbstractModel implements Serializable {
 
+	
 	private Date date;
 	private String condition;
 	private String cruisingRange;

@@ -1,11 +1,4 @@
-<html xmlns:wicket="http://wicket.apache.org">
-<head>
-<meta charset="utf-8" />
-<title>flight edit page</title>
-<link rel="stylesheet" href="style.css" type="text/css" media="screen"
-	title="Stylesheet" />
-</head>
-<body>
+<wicket:extend>
 	<footer class="editFooter">
 		<h2>Flight edit</h2>
 	</footer>
@@ -13,6 +6,10 @@
 		<div class="editContent">
 			<form wicket:id="form">
 				<table class="table-edit">
+					<tr>
+						<td><b>Flight Name:</b></td>
+						<td><input type="text" wicket:id="name" /></td>
+					</tr>
 					<tr>
 						<td><h4>Status:</h4></td>
 						<td><select wicket:id="status"></select></td>
@@ -32,6 +29,4 @@
 		</div>
 	</aside>
 	<div wicket:id="feedback"></div>
-
-</body>
-</html>
+</wicket:extend>

@@ -1,6 +1,5 @@
 package by.grsu.by.dataaccess;
 
-
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -13,7 +12,21 @@ import org.apache.commons.lang3.StringUtils;
 
 import com.thoughtworks.xstream.XStream;
 
+import by.grsu.by.datamodel.Car;
+import by.grsu.by.datamodel.Driver;
+import by.grsu.by.datamodel.Flight;
+import by.grsu.by.datamodel.Manager;
+import by.grsu.by.datamodel.Request;
+import by.grsu.by.datamodel.UserCredentials;
+import by.grsu.by.datamodel.UserProfile;
 import by.grsu.by.table.AbstractTable;
+import by.grsu.by.table.CarTable;
+import by.grsu.by.table.DriverTable;
+import by.grsu.by.table.ManagerTable;
+import by.grsu.by.table.FlightTable;
+import by.grsu.by.table.RequestTable;
+import by.grsu.by.table.UserCredentialsTable;
+import by.grsu.by.table.UserProfileTable;
 
 public abstract class AbstractDao<T extends AbstractTable<E>, E> implements IXmlDao<E> {
 
@@ -29,6 +42,13 @@ public abstract class AbstractDao<T extends AbstractTable<E>, E> implements IXml
 		}
 		xStream = new XStream();
 		xStream.processAnnotations(new Class[] { getTableClass() });
+
+		Class<?>[] classes = new Class[] { Manager.class, ManagerTable.class, Request.class, RequestTable.class, 
+				Flight.class, FlightTable.class, Car.class, CarTable.class, Driver.class, DriverTable.class, 
+				UserCredentials.class, UserCredentialsTable.class,
+				UserProfile.class, UserProfileTable.class };
+		XStream.setupDefaultSecurity(xStream);
+		xStream.allowTypes(classes);
 	}
 
 	/**

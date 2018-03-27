@@ -1,0 +1,92 @@
+<wicket:extend>
+	<footer class="editFooter">
+		<h2>Consider the Request</h2>
+	</footer>
+	<aside>
+
+		<div class="editContent">
+			<table class="considerRequest">
+				<thead>
+					<tr>
+						<th>Status</th>
+						<th>Cruising Range</th>
+						<th>Body Type</th>
+						<th>Date</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="trHover" wicket:id="rows">
+						<td class="column-1"><span wicket:id="status" /></td>
+						<td class="column-2"><span wicket:id="cruisingRange" /></td>
+						<td class="column-3"><span wicket:id="bodyType" /></td>
+						<td class="column-4"><span wicket:id="date" /></td>
+
+					</tr>
+				</tbody>
+			</table>
+
+			<hr>
+
+			<b><span class="label" wicket:id="label-DriverOfEmpty" /></b>
+			<wicket:enclosure child="label-id">
+				<table class="considerRequest">
+					<thead>
+						<tr>
+							<th><span wicket:id="label-id" /></th>
+							<th>Driver's name</th>
+							<th>Model</th>
+							<th>Condition</th>
+							<th>Cruising Range</th>
+							<th>Body Type</th>
+							<th>Select Driver</th>
+						</tr>
+					</thead>
+					<tbody>
+						<span wicket:id="group">
+							<tr class="trHover" wicket:id="rowsDrivers">
+								<wicket:enclosure child="id">
+									<td class="column-1"><span wicket:id="id" /></td>
+								</wicket:enclosure>
+								<td class="column-2"><span wicket:id="name" /></td>
+								<td class="column-3"><span wicket:id="carModel" /></td>
+								<td class="column-4"><span wicket:id="condition" /></td>
+								<td class="column-5"><span wicket:id="cruisingRange" /></td>
+								<td class="column-6"><span wicket:id="bodyType" /></td>
+								<td class="column-7"><input type="radio" wicket:id="radio" checked />
+								</td>
+							</tr>
+						</span>
+					</tbody>
+
+
+				</table>
+			</wicket:enclosure>
+
+			<form wicket:id="form">
+
+				<table class="table-edit">
+					<tr>
+						<td><b>Flight Name:</b></td>
+						<td><input type="text" wicket:id="name" /></td>
+					</tr>
+					<tr>
+						<td><h4>Date:</h4></td>
+						<td><input type="text" wicket:id="dateTextField" /></td>
+					</tr>
+				</table>
+				<div>
+				<span wicket:id="message"></span>
+						<p>
+							
+							<button type="submit" wicket:id="createFlight">Create
+								flight</button>
+							<button type="button" wicket:id="cancel">Cancel</button>
+						</p>
+					</div>
+			</form>
+
+		</div>
+
+	</aside>
+	<div wicket:id="feedback"></div>
+</wicket:extend>

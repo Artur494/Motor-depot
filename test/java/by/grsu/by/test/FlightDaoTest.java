@@ -8,6 +8,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import by.grsu.by.dataaccess.impl.FlightDao;
+import by.grsu.by.datamodel.Driver;
 import by.grsu.by.datamodel.Flight;
 import junit.framework.Assert;
 
@@ -56,9 +57,11 @@ public class FlightDaoTest {
 		
 		GregorianCalendar calendar = new GregorianCalendar(1999, 03, 15);
 		Date date = calendar.getTime();
-		
+		newFlight.setName("Moscow");
 		newFlight.setDate(date);
 		newFlight.setStatus("good");
+		Driver dr = new Driver();
+		newFlight.setDriver(dr);
 		flightDao.saveNew(newFlight);
 		return newFlight;
 	}

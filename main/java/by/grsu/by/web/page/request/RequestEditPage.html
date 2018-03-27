@@ -1,11 +1,4 @@
-<html xmlns:wicket="http://wicket.apache.org">
-<head>
-<meta charset="utf-8" />
-<title>request edit page</title>
-<link rel="stylesheet" href="style.css" type="text/css" media="screen"
-	title="Stylesheet" />
-</head>
-<body>
+<wicket:extend>
 	<footer class="editFooter">
 		<h2>Request edit</h2>
 	</footer>
@@ -13,10 +6,6 @@
 		<div class="editContent">
 			<form wicket:id="form">
 				<table class="table-edit">
-					<tr>
-						<td><h4>Status:</h4></td>
-						<td><select wicket:id="status"></select></td>
-					</tr>
 					<tr>
 						<td><br></td>
 					</tr>
@@ -26,10 +15,6 @@
 					<tr>
 						<td><h4>Cruising Range:</h4></td>
 						<td><select wicket:id="cruisingRange"></select></td>
-					</tr>
-					<tr>
-						<td><h4>Condition:</h4></td>
-						<td><select wicket:id="condition"></select></td>
 					</tr>
 					<tr>
 						<td><h4>Body type:</h4></td>
@@ -51,6 +36,4 @@
 	</aside>
 
 	<div wicket:id="feedback"></div>
-
-</body>
-</html>
+</wicket:extend>

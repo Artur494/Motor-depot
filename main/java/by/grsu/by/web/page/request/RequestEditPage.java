@@ -1,13 +1,10 @@
 package by.grsu.by.web.page.request;
 
-import java.util.Arrays;
 import java.util.Date;
-import java.util.List;
 
 import org.apache.wicket.datetime.StyleDateConverter;
 import org.apache.wicket.datetime.markup.html.form.DateTextField;
 import org.apache.wicket.extensions.yui.calendar.DatePicker;
-import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.form.DropDownChoice;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.SubmitLink;
@@ -20,19 +17,26 @@ import org.apache.wicket.model.PropertyModel;
 import by.grsu.by.dataaccess.impl.RequestDao;
 import by.grsu.by.datamodel.Characteristics;
 import by.grsu.by.datamodel.Request;
+import by.grsu.by.service.Service;
+import by.grsu.by.service.impl.RequestServiceImpl;
+import by.grsu.by.web.page.AbstractPage;
 
-public class RequestEditPage extends WebPage {
+public class RequestEditPage extends AbstractPage {
 
-	private RequestDao requestDao;
-	private Boolean selectCreateOrUpdate = true;
+	private Service requestService;
 	public Request flightRequest;
 	
 
-	public RequestEditPage(Request request, Boolean selectCreateOrUpdate) {
+	public RequestEditPage() {
+		super();
+		this.flightRequest = new Request();
+		requestService = new RequestServiceImpl("testXmlFolder");
+	}
+	
+	public RequestEditPage(Request request) {
 		super();
 		this.flightRequest = request;
-		requestDao = new RequestDao("testXmlFolder");
-		this.selectCreateOrUpdate = selectCreateOrUpdate;
+		requestService = new RequestServiceImpl("testXmlFolder");
 	}
 
 	@Override
@@ -42,18 +46,7 @@ public class RequestEditPage extends WebPage {
 		Form<Request> form = new Form<Request>("form", new CompoundPropertyModel<Request>(flightRequest));
 		add(form);
 		
-		
-		final List<String> status = Arrays.asList(new String[] {"In processing", "Complited", "Refusing" });
-		final DropDownChoice<String> dropStatus = new DropDownChoice<String>("status", status);
-		dropStatus.setLabel(new Model<String>("Status"));
-		dropStatus.setRequired(true);
-		form.add(dropStatus);
-
-		final List<String> conditions = Arrays.asList(new String[] {"Ready for flight", "Requires refueling", "Need repair" });
-		final DropDownChoice<String> dropChoice = new DropDownChoice<String>("condition", conditions);
-		dropChoice.setLabel(new Model<String>("Condition"));
-		dropChoice.setRequired(true);
-		form.add(dropChoice);
+		flightRequest.setStatus("In processing");
 		
 		final DropDownChoice<String> dropCharacteristicsCruisingRange = new DropDownChoice<String>("cruisingRange", Characteristics.getCruisingRange());
 		dropCharacteristicsCruisingRange.setLabel(new Model<String>("Cruising Range"));
@@ -68,6 +61,8 @@ public class RequestEditPage extends WebPage {
 		
 		DateTextField dateTextField = new DateTextField("dateTextField1", new PropertyModel<Date>(this, "flightRequest.date"),
 				new StyleDateConverter("S-", true));
+		dateTextField.setLabel(new Model<String>("Date"));
+		dateTextField.setRequired(true);
 		form.add(dateTextField);
 
 		DatePicker datePicker = new DatePicker() {
@@ -85,10 +80,7 @@ public class RequestEditPage extends WebPage {
 			@Override
 			public void onSubmit() {
 				super.onSubmit();
-				if (selectCreateOrUpdate) {			
-					requestDao.saveNew(flightRequest);
-				}
-				else {requestDao.update(flightRequest);}
+				requestService.saveOrUpdate(flightRequest);
 				setResponsePage(new RequestPage());
 			}
 		});

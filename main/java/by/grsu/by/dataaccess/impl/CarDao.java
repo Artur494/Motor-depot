@@ -8,7 +8,7 @@ import by.grsu.by.datamodel.Car;
 import by.grsu.by.table.CarTable;
 
 
-public class CarDao extends AbstractDao<CarTable, Car> {
+public class CarDao extends AbstractDao<CarTable, Car> implements Serializable {
 
 	public CarDao(final String rootFolderPath) {
 		super(rootFolderPath);
@@ -50,7 +50,7 @@ public class CarDao extends AbstractDao<CarTable, Car> {
 	}
 
 	@Override
-	public Car get(Serializable id) {
+	public Car get(Long id) {
 		// get existing data
 				final CarTable carTable = deserializeFromXml();
 				// find by ID
@@ -70,7 +70,7 @@ public class CarDao extends AbstractDao<CarTable, Car> {
 	}
 
 	@Override
-	public void delete(Serializable id) {
+	public void delete(Long id) {
 		// get existing data
 				final CarTable carTable = deserializeFromXml();
 				// find by ID

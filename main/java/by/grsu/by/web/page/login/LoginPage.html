@@ -1,0 +1,27 @@
+<wicket:extend>
+	<div class="login">
+		<form wicket:id="form">
+			<div class="editContent">
+				<h2>Sign in:</h2>
+				<div class="signIn">
+					<div class="field">
+						<label for="login">Login:</label><input type="text"
+							wicket:id="username" autocomplete="off" />
+					</div>
+					<div class="field">
+						<label for="password">Password:</label><input type="password"
+							wicket:id="password" />
+					</div>
+				</div>
+				<div>
+					<button type="submit" class="btn waves-effect"
+						wicket:id="submit-btn">
+						<b>Login</b>
+					</button>
+				</div>
+			</div>
+		</form>
+		<div wicket:id="feedbackpanel"></div>
+	</div>
+</wicket:extend>
+

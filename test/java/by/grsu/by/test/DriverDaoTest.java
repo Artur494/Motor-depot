@@ -59,10 +59,9 @@ public class DriverDaoTest {
 		final Driver newDriver = new Driver();
 		
 		final Car car = new Car();
-		car.setCondition("normal");
-		car.setCharacteristics(true);
-		
 		newDriver.setCar(car);
+		newDriver.setName("Alex");
+		
 		driverDao.saveNew(newDriver);
 		return newDriver;
 	}

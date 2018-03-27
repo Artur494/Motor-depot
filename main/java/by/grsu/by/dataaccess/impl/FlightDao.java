@@ -38,6 +38,8 @@ public class FlightDao extends AbstractDao<FlightTable, Flight> {
 						// copy data
 						row.setDate(entity.getDate());
 						row.setStatus(entity.getStatus());
+						row.setDriver(entity.getDriver());
+						row.setName(entity.getName());
 						break;
 					}
 				}
@@ -47,7 +49,7 @@ public class FlightDao extends AbstractDao<FlightTable, Flight> {
 	}
 
 	@Override
-	public Flight get(Serializable id) {
+	public Flight get(Long id) {
 		// get existing data
 				final FlightTable flightTable = deserializeFromXml();
 				// find by ID
@@ -67,7 +69,7 @@ public class FlightDao extends AbstractDao<FlightTable, Flight> {
 	}
 
 	@Override
-	public void delete(Serializable id) {
+	public void delete(Long id) {
 		// get existing data
 				final FlightTable flightTable = deserializeFromXml();
 				// find by ID

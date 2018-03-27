@@ -47,7 +47,7 @@ public class ManagerDao extends AbstractDao<ManagerTable, Manager> {
 	}
 
 	@Override
-	public Manager get(Serializable id) {
+	public Manager get(Long id) {
 		// get existing data
 				final ManagerTable managerTable = deserializeFromXml();
 				// find by ID
@@ -67,7 +67,7 @@ public class ManagerDao extends AbstractDao<ManagerTable, Manager> {
 	}
 
 	@Override
-	public void delete(Serializable id) {
+	public void delete(Long id) {
 		// get existing data
 				final ManagerTable managerTable = deserializeFromXml();
 				// find by ID

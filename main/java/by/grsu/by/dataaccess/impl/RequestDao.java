@@ -50,7 +50,7 @@ public class RequestDao extends AbstractDao<RequestTable, Request> {
 	}
 
 	@Override
-	public Request get(Serializable id) {
+	public Request get(Long id) {
 		// get existing data
 				final RequestTable requestTable = deserializeFromXml();
 				// find by ID
@@ -70,7 +70,7 @@ public class RequestDao extends AbstractDao<RequestTable, Request> {
 	}
 
 	@Override
-	public void delete(Serializable id) {
+	public void delete(Long id) {
 		// get existing data
 				final RequestTable requestTable = deserializeFromXml();
 				// find by ID

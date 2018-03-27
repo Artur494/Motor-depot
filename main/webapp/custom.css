@@ -11,6 +11,15 @@ body {
 	color: white;
 }
 
+.table-edit h4 {
+	margin: 0px;
+}
+
+.label {
+	padding: 20px 0px 20px 0px;
+	font-size: 20px;
+}
+
 h1, h2, h3, h4 {
 	margin: 0 0 15px;
 }
@@ -20,15 +29,15 @@ a {
 	text-decoration: none;
 }
 
+a:hover {
+	text-decoration: underline;
+}
+
 aside {
 	min-height: 100%;
 	height: auto !important;
 	margin: 20px 50px 119px 50px;
 	text-align: center;
-}
-
-td {
-	padding: 10px 30px 10px 0px;
 }
 
 #menu {
